@@ -11,7 +11,7 @@ cat > ctags << END
 set -e
 PATH="/usr/local/bin:\$PATH"
 trap "rm -f .git/tags.\$$" EXIT
-ctags --tag-relative -Rf.git/tags.\$$ --exclude=.git --fields=+l
+ctags --tag-relative -Rf.git/tags.\$$ --exclude=.git --exclude=node_modules --exclude=bower_components --fields=+l
 mv .git/tags.\$$ .git/tags
 END
 
